@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="login_container">
+      <p>Login</p>
+      <form action="https://httpbin.org/post" method="post" id="login_form">
+        <label for="username">Nazwa użytkownika</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="password">Hasło</label>
+        <input type="password" id="password" name="password" required />
+
+        <button id="login_button" type="submit">Zaloguj się</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,184 @@
+html {
+  font-size: 16px; /* bazowy rozmiar czcionki */
+  font-family: system-ui, sans-serif; /* font systemowy */
+  line-height: 1.5; /* lepsza czytelność */
+}
+body {
+  margin: 1rem;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+a {
+  color: #0066cc; /* niebieski kolor linków */
+  text-decoration: none; /* bez podkreślenia */
+  font-size: 1.4rem;
+}
+a:hover {
+  text-decoration: underline; /* podkreślenie przy najechaniu */
+}
+
+/* KONKURS */
+
+.konkurs_container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.konkurs_header {
+  display: flex;
+  width: 100%;
+}
+.konkurs_header_text {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.konkurs_header_symbol {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 25px;
+  user-select: none;
+}
+.ksiezyc {
+  scale: 2;
+}
+#theme-toggle {
+  z-index: 100;
+}
+#theme-toggle:checked ~ form,
+#theme-toggle:checked ~ form * {
+  background-color: #222;
+  color: #fff;
+  border-color: #555;
+}
+
+#theme-toggle:checked ~ form button {
+  background-color: #4caf50;
+}
+
+#theme-toggle:checked ~ form button:hover {
+  background-color: #45a049;
+}
+
+#theme-toggle:checked ~ form input,
+#theme-toggle:checked ~ form select,
+#theme-toggle:checked ~ form textarea {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #666;
+}
+#theme-toggle:checked ~ form input[type='text'],
+#theme-toggle:checked ~ form input[type='email'],
+#theme-toggle:checked ~ form input[name='miasto'],
+#theme-toggle:checked ~ form input[type='date'],
+#theme-toggle:checked ~ form input[type='number'] {
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-bottom: 1px solid #666;
+  border-right: 1px solid #666;
+}
+
+#theme-toggle:checked ~ form fieldset {
+  border: 2px solid #fff;
+}
+
+#theme-toggle:checked
+  ~ form
+  input[type='date']::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+.konkurs_container form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  padding: 25px 35px;
+}
+
+.konkurs_container h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='number'],
+input[type='date'],
+input[type='password'],
+input[list],
+select,
+input[type='color'] {
+  max-width: 100%;
+  padding: 8px 10px;
+  margin-top: 4px;
+  border: 1px solid black;
+}
+
+input[type='color'] {
+  padding: 0;
+  height: 35px;
+  width: 100%;
+  cursor: pointer;
+}
+
+input[type='radio'],
+input[type='checkbox'],
+select,
+button,
+input[list] {
+  cursor: pointer;
+}
+
+fieldset {
+  margin-top: 15px;
+  border: 2px solid #ccc;
+  padding: 10px 15px;
+}
+
+fieldset legend {
+  padding: 0 5px;
+}
+
+fieldset label {
+  display: block;
+  margin: 5px 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.checkbox {
+  margin-top: 15px;
+}
+
+.checkbox label {
+  font-weight: normal;
+}
+
+button {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
