@@ -1,25 +1,3 @@
-html {
-  font-size: 16px; /* bazowy rozmiar czcionki */
-  font-family: system-ui, sans-serif; /* font systemowy */
-  line-height: 1.5; /* lepsza czytelność */
-}
-body {
-  margin: 1rem;
-  padding: 0;
-  background-color: #f9f9f9;
-}
-
-a {
-  color: #0066cc; /* niebieski kolor linków */
-  text-decoration: none; /* bez podkreślenia */
-  font-size: 1.4rem;
-}
-a:hover {
-  text-decoration: underline; /* podkreślenie przy najechaniu */
-}
-
-/* KONKURS */
-
 .konkurs_container {
   max-width: 500px;
   margin: 0 auto;
