@@ -1,0 +1,211 @@
+:root {
+  --border: rgb(255, 136, 0);
+  --border-width: 3px;
+  --cream: #fdf2b3;
+  --white: #ffffff;
+  --red: #ff4d4d;
+  --blue: #007bff;
+  --green: #28a745;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+}
+
+.item {
+  color: var(--white);
+  text-align: center;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+fieldset {
+  background-color: var(--cream);
+  border: var(--border-width) solid var(--border);
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+legend {
+  font-weight: bold;
+}
+
+.container {
+  background-color: var(--cream);
+  border: var(--border-width) solid var(--border);
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+body:has(input[value='blue']:checked) {
+  @media (min-width: 1024px) {
+    .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .item {
+      background-color: var(--blue);
+      width: 30%;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .item {
+      background-color: var(--blue);
+      width: 70%;
+    }
+  }
+}
+
+body:has(input[value='red']:checked) {
+  .container > .item:nth-child(1) {
+    width: 30%;
+    order: 3;
+    font-weight: bold;
+  }
+
+  .container > .item:nth-child(1)::after {
+    content: 'Jestem wiekszy i na środku!';
+    font-style: italic;
+    font-size: 80%;
+    display: block;
+    margin-top: 10px;
+    line-height: 0%;
+  }
+
+  .container > .item:nth-child(2) {
+    order: 1;
+  }
+  .container > .item:nth-child(3) {
+    order: 2;
+  }
+  .item {
+    order: 4;
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+    }
+    .container > .item:nth-child(1) {
+      width: 31%;
+      order: 3;
+    }
+    .item {
+      background-color: var(--red);
+      width: 16%;
+      min-width: 150px;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .container > .item:nth-child(1) {
+      flex: 2 1 100%;
+      order: 3;
+    }
+    .item {
+      background-color: var(--red);
+      flex: 1 1 40%;
+      min-width: 0;
+      margin: 0.5rem;
+    }
+  }
+}
+
+body:has(input[value='green']:checked) {
+  .container > .item:nth-child(1)::before {
+    content: '😀';
+    position: absolute;
+    left: 1em;
+    top: 50%;
+    transform: translateY(-50%) scale(2);
+  }
+
+  .container > .item:nth-child(1)::after {
+    content: '😀';
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%) scale(2);
+  }
+  @media (min-width: 1024px) {
+    .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 1rem;
+    }
+    .item {
+      background-color: var(--green);
+    }
+    .container > .item:nth-child(1) {
+      width: 31%;
+      position: relative;
+    }
+    .container > .item:nth-child(2) {
+      width: 26%;
+    }
+    .container > .item:nth-child(3) {
+      width: 21%;
+    }
+    .container > .item:nth-child(4) {
+      width: 16%;
+    }
+    .container > .item:nth-child(5) {
+      width: 9%;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: flex-end;
+    }
+    .item {
+      background-color: var(--green);
+    }
+    .container > .item:nth-child(1) {
+      width: 70%;
+      order: 5;
+      position: relative;
+    }
+    .container > .item:nth-child(2) {
+      width: 60%;
+      order: 4;
+    }
+    .container > .item:nth-child(3) {
+      width: 50%;
+      order: 3;
+    }
+    .container > .item:nth-child(4) {
+      width: 40%;
+      order: 2;
+    }
+    .container > .item:nth-child(5) {
+      width: 30%;
+      order: 1;
+    }
+  }
+}
