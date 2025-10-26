@@ -1,0 +1,270 @@
+:root {
+  --primary-color: rgb(30, 96, 170);
+  --text-color: #333;
+  --border-color: #ddd;
+}
+
+.color-radio#color-blue:checked ~ .product-content {
+  --primary-color: rgb(30, 96, 170);
+  --product-image: url('../polo_img/polo_b.png');
+}
+
+.color-radio#color-red:checked ~ .product-content {
+  --primary-color: rgb(221, 51, 51);
+  --product-image: url('../polo_img/polo_r.png');
+}
+
+.color-radio#color-green:checked ~ .product-content {
+  --primary-color: rgb(76, 175, 80);
+  --product-image: url('../polo_img/polo_g.png');
+}
+
+.color-radio#color-yellow:checked ~ .product-content {
+  --primary-color: rgb(255, 193, 7);
+  --product-image: url('../polo_img/polo_y.png');
+}
+.product-card {
+  --product-image: url('../polo_img/polo_b.png');
+}
+
+.product-card {
+  --card-max-width: 1200px;
+  --card-padding: max(1rem, calc((100vw - var(--card-max-width)) / 2));
+
+  width: min(var(--card-max-width), 100%);
+  margin: 0 auto;
+  padding: var(--card-padding);
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: white;
+}
+
+.product-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  justify-content: flex-start;
+}
+
+.product-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+.promo-badge {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.product-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.product-image {
+  width: min(500px, calc(100% - 2 * var(--card-padding)));
+  aspect-ratio: 1;
+  border: 3px solid var(--primary-color);
+  border-radius: 4px;
+  padding: 1rem;
+  background: white;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  content: var(--product-image);
+}
+
+.color-radio,
+.size-radio {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.product-details {
+  width: 100%;
+  max-width: 300px;
+}
+
+@media (min-width: 800px) {
+  .product-content {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .product-image {
+    flex-shrink: 0;
+  }
+
+  .product-details {
+    flex-shrink: 0;
+  }
+}
+.description {
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+/* Color Selection */
+.color-selection h2,
+.size-selection h2 {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  color: var(--text-color);
+}
+
+.color-options {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.color-option {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  position: relative;
+}
+
+.color-option:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px white, 0 0 0 4px var(--primary-color);
+}
+
+#color-blue:checked ~ .product-content .color-options label[for='color-blue'],
+#color-red:checked ~ .product-content .color-options label[for='color-red'],
+#color-green:checked ~ .product-content .color-options label[for='color-green'],
+#color-yellow:checked
+  ~ .product-content
+  .color-options
+  label[for='color-yellow'] {
+  outline: none;
+}
+
+#color-blue:checked ~ .product-content .color-options label[for='color-blue'] {
+  box-shadow: 0 0 0 3px white, 0 0 0 5px rgb(30, 96, 170);
+  border-color: rgb(30, 96, 170);
+}
+#color-red:checked ~ .product-content .color-options label[for='color-red'] {
+  box-shadow: 0 0 0 3px white, 0 0 0 5px rgb(221, 51, 51);
+  border-color: rgb(221, 51, 51);
+}
+#color-green:checked
+  ~ .product-content
+  .color-options
+  label[for='color-green'] {
+  box-shadow: 0 0 0 3px white, 0 0 0 5px rgb(76, 175, 80);
+  border-color: rgb(76, 175, 80);
+}
+#color-yellow:checked
+  ~ .product-content
+  .color-options
+  label[for='color-yellow'] {
+  box-shadow: 0 0 0 3px white, 0 0 0 5px rgb(255, 193, 7);
+  border-color: rgb(255, 193, 7);
+}
+
+.color-option.blue {
+  background-color: rgb(30, 96, 170);
+}
+.color-option.red {
+  background-color: rgb(221, 51, 51);
+}
+.color-option.green {
+  background-color: rgb(76, 175, 80);
+}
+.color-option.yellow {
+  background-color: rgb(255, 193, 7);
+}
+
+.size-options {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.size-option {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--border-color);
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.size-option.active {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+#size-s:checked ~ .product-content .size-options label[for='size-s'],
+#size-m:checked ~ .product-content .size-options label[for='size-m'],
+#size-l:checked ~ .product-content .size-options label[for='size-l'],
+#size-xl:checked ~ .product-content .size-options label[for='size-xl'] {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.06) inset;
+}
+
+.size-options label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+.size-options label:focus {
+  outline: 3px solid rgba(0, 0, 0, 0.06);
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.add-to-cart {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-to-cart:hover {
+  filter: brightness(1.1);
+}
