@@ -2,11 +2,58 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
-    <title>Lab 4</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="css/kanban.css" />
   </head>
   <body>
-    <h1>Lab 4</h1>
-    <a href="..">Powrót</a>
+    <nav class="top-nav">
+      <a href=".." class="back-button">← Powrót</a>
+      <button id="clear-all" class="clear-button">Wyczyść wszystko</button>
+    </nav>
+    <div class="kanban">
+      <div class="column" data-column="todo">
+        <div class="column-header">
+          <h2>Do zrobienia</h2>
+          <span class="card-counter">0</span>
+          <div class="column-menu">
+            <button class="sort-button" title="Sortuj karty">↕️</button>
+          </div>
+        </div>
+        <div class="column-buttons">
+          <button class="add-card">Dodaj kartę</button>
+          <button class="color-column">Koloruj kolumnę</button>
+        </div>
+        <div class="cards"></div>
+      </div>
+      <div class="column" data-column="doing">
+        <div class="column-header">
+          <h2>W trakcie</h2>
+          <span class="card-counter">0</span>
+          <div class="column-menu">
+            <button class="sort-button" title="Sortuj karty">↕️</button>
+          </div>
+        </div>
+        <div class="column-buttons">
+          <button class="add-card">Dodaj kartę</button>
+          <button class="color-column">Koloruj kolumnę</button>
+        </div>
+        <div class="cards"></div>
+      </div>
+      <div class="column" data-column="done">
+        <div class="column-header">
+          <h2>Zrobione</h2>
+          <span class="card-counter">0</span>
+          <div class="column-menu">
+            <button class="sort-button" title="Sortuj karty">↕️</button>
+          </div>
+        </div>
+        <div class="column-buttons">
+          <button class="add-card">Dodaj kartę</button>
+          <button class="color-column">Koloruj kolumnę</button>
+        </div>
+        <div class="cards"></div>
+      </div>
+    </div>
+    <script src="js/kanban.js"></script>
   </body>
 </html>
