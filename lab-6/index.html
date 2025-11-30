@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Lab 6 — Ajax demo</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Ajax — proste demo (JSONPlaceholder)</h1>
+
+      <div class="controls">
+        <button id="fetch-data">Pobierz dane</button>
+        <button id="fetch-error">Wywołaj błąd</button>
+        <button id="reset">Reset</button>
+      </div>
+
+      <div id="message" class="message" role="status" aria-live="polite"></div>
+
+      <div id="loader" class="loader" hidden>Ładowanie…</div>
+
+      <ul id="items" class="items"></ul>
+    </main>
+
+    <script type="module" src="js/demo.js"></script>
+  </body>
+</html>
