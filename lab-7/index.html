@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Lab 7 — Product Cards</title>
+    <style>
+      :root {
+        --bg: #f3f6fb;
+        --card: #fff;
+      }
+      body {
+        font-family: system-ui, Arial;
+        margin: 0;
+        background: var(--bg);
+        padding: 28px;
+      }
+      h1 {
+        color: #0b63bf;
+        margin: 0 0 18px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 18px;
+        align-items: start;
+      }
+      header {
+        max-width: 1200px;
+        margin: 0 auto 18px;
+      }
+      .wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .cart-info {
+        margin-top: 12px;
+        font-size: 14px;
+      }
+    </style>
+    <script type="module" src="./components/product-card.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>Lab 7 — Karty Produktów</h1>
+        <div class="cart-info">
+          Koszyk: <span id="cart-count">0</span> produktów
+        </div>
+      </header>
+
+      <main>
+        <section class="grid" id="products">
+          <product-card>
+            <img slot="image" src="img/tshirt.jpg" alt="T-shirt 1" />
+            <span slot="title">Classic T-Shirt</span>
+            <span slot="price">59,99 zł</span>
+            <span slot="promo">-20%</span>
+            <div slot="colors">
+              <button style="background: #0b63bf" title="Niebieski"></button>
+              <button style="background: #222" title="Czarny"></button>
+              <button
+                style="background: #fff; border: 1px solid #ccc"
+                title="Biały"
+              ></button>
+            </div>
+            <div slot="sizes">
+              <button>S</button>
+              <button>M</button>
+              <button>L</button>
+            </div>
+          </product-card>
+
+          <product-card>
+            <img slot="image" src="img/hoodie.jpg" alt="Hoodie" />
+            <span slot="title">Comfort Hoodie</span>
+            <span slot="price">129,00 zł</span>
+            <div slot="sizes">
+              <button>M</button><button>L</button><button>XL</button>
+            </div>
+          </product-card>
+
+          <product-card>
+            <img slot="image" src="img/dress.jpg" alt="Dress" />
+            <span slot="title">Summer Dress</span>
+            <span slot="price">199,00 zł</span>
+            <div slot="colors">
+              <button style="background: #e91e63"></button
+              ><button style="background: #ff9800"></button>
+            </div>
+          </product-card>
+
+          <product-card>
+            <img slot="image" src="img/jeans.jpg" alt="Jeans" />
+            <span slot="title">Denim Jeans</span>
+            <span slot="price">249,00 zł</span>
+            <div slot="sizes">
+              <button>28</button><button>30</button><button>32</button>
+            </div>
+          </product-card>
+
+          <product-card>
+            <img slot="image" src="img/jacket.jpg" alt="Jacket" />
+            <span slot="title">Leather Jacket</span>
+            <span slot="price">599,00 zł</span>
+            <span slot="promo">Nowość</span>
+          </product-card>
+
+          <product-card>
+            <img slot="image" src="img/sneakers.jpg" alt="Sneakers" />
+            <span slot="title">Sport Sneakers</span>
+            <span slot="price">349,00 zł</span>
+            <div slot="colors">
+              <button style="background: #4caf50"></button
+              ><button style="background: #607d8b"></button>
+            </div>
+            <div slot="sizes">
+              <button>40</button><button>41</button><button>42</button>
+            </div>
+          </product-card>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const productsEl = document.getElementById('products');
+      const cartCount = document.getElementById('cart-count');
+      let count = 0;
+      productsEl.addEventListener('add-to-cart', (e) => {
+        count += 1;
+        cartCount.textContent = count;
+        const el = e.detail.element;
+        el.style.transform = 'scale(0.995)';
+        setTimeout(() => (el.style.transform = ''), 120);
+      });
+    </script>
+  </body>
+</html>
